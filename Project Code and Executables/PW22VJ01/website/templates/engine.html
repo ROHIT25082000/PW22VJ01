@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}  
+    LPE|(Log Proceesing Engine)
+{% endblock %}
+
+{% block content %} 
+    <form action="/engine", method="post" class="fileupload text-style-form" enctype="multipart/form-data">
+            <label for="file_upload">Upload your server logs</label>
+            <input type="file" name="input_file" id="file_upload">
+            {% if IsFile == True %}
+                <input type="submit" value="Re Upload" class="btn btn-warning btn-lg">
+            {% else %}
+                <input type="submit" value="Upload" class="btn btn-primary btn-lg">
+            {% endif %}
+
+            {% if IsFile == True %}
+                <a href="/engine"><input type="button" value="Cancel" class="btn btn-danger btn-lg" ></a>
+                <p style="color:#ffc0cb; font-family: monospace;"> {{ file_uploaded }}</p>
+            {% endif %}
+
+            {% if IsFile == True %}
+                <a href="/engine/run"> <input type="button" value="Detect Frauds" class="btn btn-outline-info"> </a>
+            {% endif %}
+    </form>
+
+
+{% endblock %}

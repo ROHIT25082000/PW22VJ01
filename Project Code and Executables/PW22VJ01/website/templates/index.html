@@ -1,0 +1,35 @@
+{% extends 'base.html' %}  
+
+{% block title %} Analyst.io | Home {% endblock %}
+
+{% block content %} 
+    <section class="middle">
+        <div class="inner-middle">
+            <img src="{{ url_for('static', filename='/images/svg1.png')}}" alt="some_image" class="main-img">
+        </div>
+        <div class="inner-middle text-img">
+            <h2>Detect anomaly in online transactions.</h2>
+            <p><span><b class="text-style">Analyst.io</b></span> helps you verify online trasactions using powerful machine learning techniques.</p>
+            <div>
+                <a href="/about"><button class="btn btn-outline-primary btn-lg">Learn</button></a>
+                <a href="/engine"><button class="btn btn-success btn-lg">Get Started</button></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="features">
+        <div class="item">
+            <i class="far fa-check-circle fa-7x"></i>
+            <h4>Easy to Use</h4>
+        </div>
+        <div class="item">
+            <i class="fas fa-bullseye fa-7x"></i>
+            <h4>Amazing Accuracy</h4>
+        </div>
+        <div class="item">
+            <i class="fas fa-hourglass-start fa-7x"></i>
+            <h4>Saves time</h4>
+        </div>
+    </section>
+{% endblock %}

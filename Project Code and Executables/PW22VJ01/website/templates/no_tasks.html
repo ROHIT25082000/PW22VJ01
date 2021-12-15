@@ -1,0 +1,25 @@
+{% extends 'base.html' %}  
+
+{% block title %}  
+    No Tasks
+{% endblock %}   
+
+
+{% block content %}  
+
+{% if no_tasks == True %}
+<center>  
+<div>
+    <img src="{{ url_for('static', filename='/images/404.png') }}" alt="404" style="height: 65vh; width: 50%">
+</div>
+</center> 
+{% endif %}
+<div>
+
+
+
+</div>
+
+
+
+{% endblock %} 

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}  
+{% block title %} Contact {% endblock %}
+
+{% block content %}  
+
+<section class="middle">
+    <div class="inner-middle">
+        <img src="{{ url_for('static', filename='/images/contact.png')}}" alt="some_image" class="main-img">
+    </div>
+    <div class="inner-middle text-img">
+        <h2>Get In Touch</h2>
+        <p><span><b class="text-style">Hey, Analyst!</b></span> We'd love to hear from you.<br> ✉️ | ☎️</p>
+        <div>
+            <a href="mailto:support@analystdotio.com"><button class="btn btn-outline-primary btn-lg">Email</button></a>
+            <a href="tel:+1800 0120 568"><button class="btn btn-success btn-lg">Buzz Us</button> </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="/images/images.jpeg" type="image/x-icon"> -->
+   
+    <!-- CDN generated style sheets  -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN generated style sheets end here  -->
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/style.css')}}">
+    <title>{% block title %} Analyst.io {% endblock %}</title>
+</head>
+<body>
+    <nav class="nav-bar text-style">
+        <div class="logo">
+            <a href="/"><h3>Analyst.io</h3></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <!-- <li><a href="#">Log In</a></li> -->
+        </ul>
+
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+                        {{message}}
+                    </div>
+                {% endif %}
+                {% if category == 'message' %}
+                    <div class="alert alert-success alter-dismissable fade show" role="alert">
+                        {{message}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}  
+
+    {% endblock %}
+    
+    <footer class="footer-tag" style="background-color: #f4f9f9;">
+        <div class="holder">
+            <div>
+              <a href="http://www.facebook.com"><i class="fab fa-facebook fa-2x"></i></a> 
+            </div>
+            <div>
+                <a href="http://www.twitter.com"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+            <div>
+                <a href="http://www.instagram.com"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+        <p style="margin: 0px;" class="text-style">© 2021 Copyright : Analyst.io <br><br> Made with ❤️ in India 🇮🇳 <br><br></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='/js/homepage.js')}}"></script>
+</body>
+</html>

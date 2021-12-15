@@ -1,0 +1,37 @@
+{% extends 'base.html' %}  
+{% block title %} About Us {% endblock %}  
+
+{% block content %}  
+<section class="middle">
+    
+    <div class="inner-middle text-img">
+        <img src="{{ url_for('static', filename='/images/uploadfiles.png')}}" alt="Upload" class="main-img">
+        <h4>Upload logs</h4>
+    </div>
+    <div class="inner-middle text-img">
+       <img src="{{ url_for('static', filename='/images/processing.png') }}" alt="processing" class="main-img">
+        <h4>Processing logs</h4>
+    </div>
+    <div class="inner-middle text-img"> 
+        <img src="{{ url_for('static', filename='/images/downloadfiles.png') }}" alt="downloadfiles" class="main-img">
+        <h4>Download logs</h4>
+    </div>
+</section>
+
+<section class="middle text-style"> 
+    {% if passed_value == 1 %} 
+        <p class="text-style functions-text"> <b>Analyst.io</b> is your best partner for analysing logs.</p>
+    {% endif %}
+
+    {% if passed_value == 2 %} 
+        <p class="text-style functions-text"><b>Analyst.io</b> helps reduce human work by around 70% so that you don't have go through all logs.</p>    
+    {% endif %}
+
+    {% if passed_value == 3 %} 
+        <p class="text-style functions-text"><b>Analyst.io's</b> lightning fast machine learning model analyses a 100 thousand web server logs in fraction of seconds.</b></span>  
+    {% endif %}
+</section>
+
+
+{% endblock %}
+

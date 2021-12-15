@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block title %} downloads {% endblock %}
+
+{% block content %}   
+
+{% if manual_user == True %}  
+<div>
+    <img src="{{ url_for('static', filename='/images/download_not_found.png') }}" alt="404" style="height: 65vh; width: 50%">
+</div> 
+{% else %}  
+
+<div class="fileupload-lossy text-style-form">
+    <p>breach_output_model_1.csv</p>  
+    <a href="/download_files/breach_output_model_1.csv"><button class="btn btn-success btn-lg">Download</button></a>   
+    <!-- <input type="submit" value="Download" class="btn btn-success btn-lg"> -->
+    <p>credit_card_fraud_model_3.csv</p>
+    <a href="/download_files/credit_card_fraud_model_3.csv"><button class="btn btn-success btn-lg">Download</button></a> 
+
+    <p>selfdeliveryfrauds_1.csv</p>
+    <a href="/download_files/selfdeliveryfrauds_1.csv"><button class="btn btn-success btn-lg">Download</button></a>
+</div> 
+{% endif %}
+
+{% endblock %}
